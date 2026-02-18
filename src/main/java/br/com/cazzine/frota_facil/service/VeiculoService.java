@@ -12,7 +12,9 @@ public class VeiculoService {
 
     public Veiculo cadastrarVeiculo(String modelo, String placa, Integer ano){
         Integer novoId = frota.size() + 1;
-        return new Veiculo(novoId, modelo, placa, ano);
+        Veiculo novoVeiculo =  new Veiculo(novoId, modelo, placa, ano);
+        frota.add(novoVeiculo);
+        return novoVeiculo;
     }
 
     public List<Veiculo> listarFrota(){
